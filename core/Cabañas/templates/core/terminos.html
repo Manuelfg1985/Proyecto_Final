@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link ref="{% static 'core/img/logo.png'%}" sizes="32x32" type="img/png">
+    <title>Términos y Condiciones - Cabañas Doña Arminda</title>
+</head>
+
+<body>
+    <header class="header">
+        {% load static %}
+        <!--BARRA DE NAVEGACION (Hamburger Menu)-->
+        <nav class="navbar">
+            <a href="{% url 'base'%}" class="logo">
+                <i class="fa-solid fa-house-flood-water"></i>
+                <h1>Doña Arminda</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'acerca' %}">Acerca</a></li>
+                <li><a href="{% url 'base'%}">Servicios</a></li>
+                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
+                <li><a href="{% url 'contact'%}">Contacto</a></li>
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="mobile-nav-links">
+                <<li><a href="{% url 'acerca' %}">Acerca</a></li>
+                <li><a href="{% url 'base'%}">Servicios</a></li>
+                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
+                <li><a href="{% url 'contact'%}">Contacto</a></li>
+            </ul>
+        </nav>
+        <!--Fin NavBar-->
+    </header>
+    <main class="terminos" id="terminos">
+        <div class="terminos__wrapper">
+            <div class="terminos__data-container">
+                <div class="terminos__data">
+                    <h1>Términos y Condiciones</h1>
+                    <p>Última actualización: 24 de mayo de 2024</p>
+
+                    <h2>1. Introducción</h2>
+                    <p>Estos Términos y Condiciones rigen el uso de los servicios de alquiler de cabañas proporcionados
+                        por Cabañas Doña Arminda en [Nombre de la localidad turística], Argentina. Al utilizar nuestros
+                        servicios, usted acepta estos términos en su totalidad.</p>
+
+                    <h2>2. Reservas</h2>
+                    <ul>
+                        <li>Las reservas pueden realizarse a través de nuestro sitio web, por teléfono o por correo
+                            electrónico.</li>
+                        <li>Se requiere un depósito del 50% del total de la reserva para confirmarla.</li>
+                        <li>El saldo restante debe abonarse al momento del check-in.</li>
+                    </ul>
+
+                    <h2>3. Cancelaciones y Reembolsos</h2>
+                    <ul>
+                        <li>Las cancelaciones realizadas con más de 30 días de antelación recibirán un reembolso
+                            completo del depósito.</li>
+                        <li>Las cancelaciones realizadas entre 15 y 30 días antes de la fecha de llegada recibirán un
+                            reembolso del 50% del depósito.</li>
+                        <li>No se realizarán reembolsos por cancelaciones con menos de 15 días de antelación.</li>
+                    </ul>
+
+                    <h2>4. Check-in y Check-out</h2>
+                    <ul>
+                        <li>El horario de check-in es a partir de las 14:00 horas.</li>
+                        <li>El horario de check-out es hasta las 10:00 horas.</li>
+                        <li>El check-in temprano y el check-out tardío están sujetos a disponibilidad y pueden incurrir
+                            en cargos adicionales.</li>
+                    </ul>
+
+                    <h2>5. Uso de las Cabañas</h2>
+                    <ul>
+                        <li>Las cabañas deben utilizarse únicamente para fines residenciales.</li>
+                        <li>Está prohibido fumar dentro de las cabañas.</li>
+                        <li>No se permiten mascotas sin autorización previa.</li>
+                        <li>Los huéspedes deben respetar las normas de convivencia y mantener el orden y la limpieza de
+                            las instalaciones.</li>
+                    </ul>
+
+                    <h2>6. Responsabilidad</h2>
+                    <p>Cabañas Doña Arminda no se responsabiliza por pérdida, daño o robo de pertenencias personales de
+                        los huéspedes. Los huéspedes son responsables de cualquier daño causado a la propiedad durante
+                        su estancia.</p>
+
+                    <h2>7. Privacidad</h2>
+                    <p>La información personal proporcionada por los huéspedes será utilizada únicamente para procesar
+                        las reservas y brindar los servicios solicitados. No compartiremos esta información con terceros
+                        sin su consentimiento.</p>
+
+                    <h2>8. Modificaciones</h2>
+                    <p>Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento.
+                        Cualquier cambio será comunicado a los huéspedes y publicado en nuestro sitio web.</p>
+
+                    <h2>9. Contacto</h2>
+                    <p>Para cualquier consulta o más información, por favor contáctenos a través de:</p>
+                    <ul>
+                        <li>Teléfono: 011-0303456</li>
+                        <li>Email: cabañasarminda@gmail.com</li>
+                        <li>Dirección: pampa y la vía s/n - Belgrano - CABA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Derechos de autor © 2024 Cabañas Doña Arminda. Todos los derechos reservados.</p>
+    </footer>
+    <script src="{% static 'core/script.js'%}"></script>
+    <script>
+        window.addEventListener('load', makeNavbarFixedForOtherPages);
+    </script>
+</body>
+
+</html>

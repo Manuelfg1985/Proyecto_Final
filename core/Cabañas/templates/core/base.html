@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>{% block title %} Cabañas Doña Arminda {% endblock %}</title>
+     {% load static %}
+    <link href="{% static 'core/css/style.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link ref="{% static 'core/img/logo.png'%}" sizes="32x32" type="img/png">
+</head>
+
+<body>
+    <header class="header">
+
+        <!--BARRA DE NAVEGACION (Hamburger Menu)-->
+        <nav class="navbar">
+            <a href="{% url 'base'%}" class="logo">
+                <i class="fa-solid fa-house-flood-water"></i>
+                <h1>Doña Arminda</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'acerca' %}">Acerca</a></li>
+                <li><a href="#profile">Servicios</a></li>
+                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
+                <li><a href="{% url 'contact' %}">Contacto</a></li>
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="{% url 'acerca' %}">Acerca</a></li>
+                <li><a href="#profile">Servicios</a></li>
+                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
+                <li><a href="{% url 'contact' %}">Contacto</a></li>
+            </ul>
+        </nav>
+        <!--Fin NavBar-->
+
+    </header>
+
+    <main>
+
+        <!--HERO SECTION (Slider)-->
+        <section class="hero-container">
+            <div class="hero-image"></div>
+            <div class="hero-image"></div>
+            <div class="hero-image"></div>
+            <div class="hero-image"></div>
+            <div class="hero-text">
+                <h2>#Bienvenido</h2>
+                <p>Conoce el paraíso escondido natural a menos de una hora de la Capital</p>
+                <div class="buttons">
+                    <a href="{% url 'contact' %}" class="active">Reservar</a>
+                    <a href="#profile" class="desactive">Servicios</a>
+                </div>
+            </div>
+        </section>
+        <!--Fin HERO SECTION (Slider)-->
+
+        <section class="profile" id="profile">
+            {% load static %}
+            <div class="profile__wrapper">
+                <div class="profile__img-container">
+                    <img src="{% static 'core/img/IMG  (0).jpeg' %}" alt="Imagen" class="profile__img">
+                </div>
+                <div class="profile__data-container">
+                    <div class="profile__data">
+                        <div class="profile__description">
+                            <h1 class="profile__description-title">Cabañas Doña Arminda</h1>
+                            <h2>Historia y Legado</h2>
+                            <p>Enclavadas en un entorno natural incomparable, Cabañas Doña Arminda ofrecen una
+                                experiencia
+                                única de relajación y conexión con la naturaleza. Fundadas por Doña Arminda, una
+                                visionaria
+                                apasionada por la hospitalidad y la naturaleza, nuestras cabañas han sido diseñadas para
+                                proporcionar un refugio acogedor y confortable para todos nuestros huéspedes.</p>
+                            <h2>Ubicación y Entorno</h2>
+                            <p>Situadas en el corazón de San Fernando, nuestras cabañas están rodeadas de paisajes
+                                impresionantes que invitan a la contemplación y la aventura. A solo 200km de CABA,
+                                nuestras
+                                cabañas ofrecen fácil acceso a una variedad de actividades al aire libre, mientras que
+                                la
+                                ubicación aislada garantiza privacidad y paz. El entorno natural, con sus bosques
+                                frondosos,
+                                ríos cristalinos y montañas majestuosas, es perfecto para aquellos que buscan escapar
+                                del
+                                bullicio de la ciudad y sumergirse en la serenidad.</p>
+                            <h2>Alojamiento y Comodidades</h2>
+                            <p>Nuestras cabañas están diseñadas para ofrecer el máximo confort en un ambiente rústico
+                                pero
+                                elegante. Contamos con una variedad de opciones de alojamiento que se adaptan a
+                                diferentes
+                                necesidades y grupos, desde acogedoras cabañas para parejas hasta amplios espacios para
+                                familias o grupos de amigos. Todas nuestras cabañas están equipadas con modernas
+                                comodidades
+                                como Wi-Fi, televisión, cocina totalmente equipada, calefacción y áreas de estar
+                                cómodas.
+                                Además, ofrecemos servicios adicionales para mejorar su estancia, como limpieza diaria,
+                                desayuno incluido y atención personalizada para cualquier necesidad especial que pueda
+                                tener.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalogue" id="catalogue">
+            <h2 class="catalogue__title">Catalogue section</h2>
+            <div class="catalogue__cabins-container">
+                <div class="catalogue__cabin">
+                    <h2 class="catalogue__cabin-name">Cabin</h2>
+                </div>
+                <div class="catalogue__cabin">
+                    <h2 class="catalogue__cabin-name">Cabin</h2>
+                </div>
+                <div class="catalogue__cabin">
+                    <h2 class="catalogue__cabin-name">Cabin</h2>
+                </div>
+                <div class="catalogue__cabin">
+                    <h2 class="catalogue__cabin-name">Cabin</h2>
+                </div>
+                <div class="catalogue__cabin">
+                    <h2 class="catalogue__cabin-name">Cabin</h2>
+                </div>
+                <div class="catalogue__cabin">
+                    <h2 class="catalogue__cabin-name">Cabin</h2>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Derechos de autor © 2024 Cabañas Doña Arminda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{% static 'core/script.js'%}"></script>
+    <script>
+        window.addEventListener('scroll', makeNavbarStickyForIndex);
+    </script>
+
+</body>
+
+</html>

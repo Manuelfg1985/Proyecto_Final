@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="icon" href="{% static 'core/img/logo.png'%}" sizes="32x32" type="img/png">
+    <title>Contacto - Cabañas Doña Arminda</title>
+</head>
+
+<body>
+    <header class="header">
+        {% load static %}
+        <!--BARRA DE NAVEGACION (Hamburger Menu)-->
+        <nav class="navbar">
+            <a href="{% url 'base'%}" class="logo">
+                <i class="fa-solid fa-house-flood-water"></i>
+                <h1>Doña Arminda</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'acerca' %}">Acerca</a></li>
+                <li><a href="{% url 'base'%}">Servicios</a></li>
+                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="mobile-nav-links">
+                <<li><a href="{% url 'acerca' %}">Acerca</a></li>
+                <li><a href="{% url 'base'%}">Servicios</a></li>
+                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <!--Fin NavBar-->
+    </header>
+   
+    <main class="contacto" id="contacto">
+        
+        <div class="contacto__wrapper">
+
+            <section class="form" id="form">
+                <h2 class="form__title" id="contact">Contacto</h2>
+                <form class="form__form" id="contactForm">
+                    <div class="form__input-container">
+                      
+                        <form action="/Contact/" method="POST">
+                            {% csrf_token %}
+                            Nombre:<br> 
+                            <input type="text" name="name" src="{{contact.name_1}}" required>  <br>
+                            Apellido: <br>
+                            <input type="text" name="lastname" src="{{contact.lastname}}"required> <br>
+                            Email: <br>
+                            <input type="Email" name="Email" src="{{contact.email}}" required> <br>
+                            Fecha: <br>
+                            <input type="date" name="date"" src="{{contact.date}}" required> <br>
+                            Huéspedes <br>
+                        
+                            <select name="select" src="{{contact.guests}}">
+
+                                <option value="value1" selected>1</option>
+                                <option value="value2">2</option>
+                                <option value="value3">3 o más</option>
+                                                            </select>
+                   
+                    </div>
+
+                    <div class="form__input-container">
+                        <label for="message" src="{{contact.message}}">Mensaje
+                            <textarea id="message" name="message" src= placeholder="Tu mensaje..." required></textarea>
+                        </label>
+                       
+
+
+                    </div>
+                    <br>
+                    <div class="form__input-container">
+                        <input type="submit" value="Enviar">
+                        <input type="reset" value="Borrar">
+                    
+
+   
+                    </div>
+                </form>
+            </section>
+        </div>
+    
+        <section class="map">
+            <div class="map__content">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509315!2d144.95565151531574!3d-37.81731397975178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577c9b3dcf1c5a!2sFlinders%20St%20Station!5e0!3m2!1sen!2sau!4v1626012602937!5m2!1sen!2sau"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>Derechos de autor © 2024 Cabañas Doña Arminda. Todos los derechos reservados.</p>
+    </footer>
+
+    {% comment %} //* ----------------------------- Validación de campos ---------------------------------*// {% endcomment %}
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let lastname = document.getElementById('lastname').value;
+            let email = document.getElementById('email').value;
+            let date = document.getElementById('date').value;
+            let message = document.getElementById('message').value;
+
+            if (name && lastname && email && date && message) {
+                alert('Formulario enviado correctamente.');
+
+                // Aquí se puede agregar el código para enviar el formulario a un servidor
+            } else {
+                alert('Por favor, complete todos los campos.');
+            }
+        });
+    </script>
+
+    <script src="{% static 'core/script.js'%}"></script>
+    <script>
+        window.addEventListener('load', makeNavbarFixedForOtherPages);
+    </script>
+</body>
+
+{% for contact in contacts %}
+{% endfor %}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link ref="{% static 'core/img/logo.png'%}" sizes="32x32" type="img/png">
+    <title>{% block title %} Cabañas Doña Arminda {% endblock %}</title>
+</head>
+
+<body>
+    <header class="header">
+        {% load static %}
+        <!--BARRA DE NAVEGACION (Hamburger Menu)-->
+        <nav class="navbar">
+            <a href="{% url 'base'%}" class="logo">
+                <i class="fa-solid fa-house-flood-water"></i>
+                <h1>Doña Arminda</h1>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{% url 'acerca'%}"">Acerca</a></li>
+                <li><a href="{% url 'base'%}">Servicios</a></li>
+                <li><a href="{% url 'terminos'%}">Términos y Condiciones</a></li>
+                <li><a href="{% url 'contact'%}">Contacto</a></li>
+            </ul>
+            <div class="burger-menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="{% url 'acerca' %}">Acerca</a></li>
+                <li><a href="{% url 'base'%}">Servicios</a></li>
+                <li><a href="{% url 'terminos' %}">Términos y Condiciones</a></li>
+                <li><a href="{% url 'contact'%}">Contacto</a></li>
+            </ul>
+        </nav>
+        <!--Fin NavBar-->
+    </header>
+    <main class="acerca" id="acerca">
+        <div class="acerca__wrapper">
+            <div class="acerca__data-container">
+                <div class="acerca__data">
+                    <h1>Acerca de Cabañas Doña Arminda</h1>
+                    <p>Bienvenidos a Cabañas Doña Arminda, su hogar lejos de casa en [Nombre de la localidad turística],
+                        Argentina. Fundada en [año de fundación], nuestra empresa se dedica a ofrecer experiencias de
+                        alojamiento únicas en un entorno natural y relajante.</p>
+
+                    <h2>Nuestra Historia</h2>
+                    <p>Cabañas Doña Arminda nació del sueño de proporcionar un refugio tranquilo y cómodo para los
+                        viajeros que desean escapar del bullicio de la ciudad. Desde nuestros humildes comienzos, hemos
+                        crecido gracias a nuestro compromiso con la calidad y el servicio al cliente.</p>
+
+                    <h2>Nuestra Misión</h2>
+                    <p>Nuestra misión es brindar a nuestros huéspedes una experiencia inolvidable, combinando la calidez
+                        de la hospitalidad argentina con el confort moderno. Nos esforzamos por ofrecer un servicio
+                        personalizado y atento, asegurándonos de que cada estancia sea especial.</p>
+
+                    <h2>Nuestros Servicios</h2>
+                    <ul>
+                        <li>Alquiler de cabañas totalmente equipadas</li>
+                        <li>Actividades recreativas y al aire libre</li>
+                        <li>Asesoramiento turístico y reservas</li>
+                        <li>Servicio de limpieza diario</li>
+                        <li>Desayuno incluido</li>
+                    </ul>
+
+                    <h2>Nuestro Compromiso con el Medio Ambiente</h2>
+                    <p>En Cabañas Doña Arminda, estamos comprometidos con la sostenibilidad y la protección del medio
+                        ambiente. Implementamos prácticas ecológicas en todas nuestras operaciones, incluyendo el uso de
+                        energías renovables y programas de reciclaje.</p>
+
+                    <h2>Contáctenos</h2>
+                    <p>Para más información sobre nuestros servicios, no dude en ponerse en contacto con nosotros.
+                        Estamos aquí para ayudarlo a planificar su próxima escapada perfecta.</p>
+                    <ul>
+                        <li>Teléfono: 03-03-456</li>
+                        <li>Email: cabañasarminda@hotmail.com</li>
+                        <li>Dirección: pampa y la vía</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Derechos de autor © 2024 Cabañas Doña Arminda. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="{% static 'core/script.js'%}"></script>
+    <script>
+        window.addEventListener('load', makeNavbarFixedForOtherPages);
+    </script>
+    
+</body>
+
+</html>
